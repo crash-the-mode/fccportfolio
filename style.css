@@ -1,0 +1,19 @@
+:root {
+	--tile-height: 300px;
+	--tile-width: 300px;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+.project-tile {
+	display: inline-block;
+	width: var(--tile-height);
+	height: var(--tile-width);
+}
+
+.project-tile > img {
+	max-width: 100%;
+	height: auto;
+}
