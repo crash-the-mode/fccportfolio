@@ -1,5 +1,5 @@
 :root {
-	--tile-width: 400px;
+	--tile-width: 30vw;
 	--nav-bar-height: 75px;
 	--nav-color: #222;
 	--nav-padding: 0 25px 0 25px;
@@ -10,7 +10,6 @@
 	--welcome-h1-margin: calc(35vh - var(--nav-bar-height));
 	--welcome-bg-color: #210934;
 	--welcome-color: #E7F7D4;
-	--flex-img-padding: 0 100px 0 100px;
 	--project-bg: #700CBC;
 	--project-fc: #210934;
 	--project-tile-fs: 20px;
@@ -18,6 +17,7 @@
 	--tile-border: 3px solid #210934;
 	--contact-bg: #FB8604;
 	--logo-br: 50%;
+	--y: translateY(-5px);
 }
 
 .flexed {
@@ -25,11 +25,12 @@
 }
 
 .flex-img {
+	box-sizing: border-box;
 	display: flex;
+	width: 100vw;
 	flex-wrap: wrap;
-	align-content: space-around;
+	align-items: space-between;
 	justify-content: center;
-	padding: var(--flex-img-padding);
 }
 
 .top {
@@ -48,7 +49,7 @@
 	display: inline-block;
 	width: var(--tile-width);
 	height: auto;
-	margin: 20px;
+	margin: 10px;
 	border-radius: var(--tile-br);
 	border: var(--tile-border);
 	background-color: var(--project-fc);
@@ -69,11 +70,14 @@
 }
 
 .logo {
+	display: flex;
 	width: 50%;
 	height: auto;
 	border-radius: var(--logo-br);
 }
-
+.jump:hover {
+	transform: var(--y);
+}
 #navbar {
 	box-sizing: border-box;
 	width: 100%;
@@ -83,6 +87,7 @@
 	top: 0;
 	position: sticky;
 	padding: var(--nav-padding);
+	z-index: 1;
 }
 
 #navbar > div {
@@ -139,4 +144,26 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+	.project-tile {
+	       	width: 45vw;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.project-tile {
+		width: 100vw;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	#navbar {
+		flex-direction: column;
+		height: 100px;
+	}
+	#navbar > div {
+		justify-content: center;
+	}
 }
